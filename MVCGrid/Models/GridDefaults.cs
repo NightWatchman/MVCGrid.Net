@@ -19,6 +19,10 @@ namespace MVCGrid.Models
             DefaultSortColumn = null;
             DefaultSortDirection = SortDirection.Unspecified;
             NoResultsMessage = "No results.";
+            NextButtonCaption = "Next";
+            PreviousButtonCaption = "Previous";
+            SummaryMessage = "Showing {0} to {1} of {2} entries";
+            ProcessingMessage = "Processing";
             ClientSideLoadingMessageFunctionName = null;
             ClientSideLoadingCompleteFunctionName = null;
             Filtering = false;
@@ -48,7 +52,13 @@ namespace MVCGrid.Models
         public bool Sorting { get; set; }
         public string DefaultSortColumn { get; set; }
         public SortDirection DefaultSortDirection { get; set; }
+
         public string NoResultsMessage { get; set; }
+        public string NextButtonCaption { get; set; }
+        public string PreviousButtonCaption { get; set; }
+        public string SummaryMessage { get; set; }
+        public string ProcessingMessage { get; set; }
+
         public string ClientSideLoadingMessageFunctionName { get; set; }
         public string ClientSideLoadingCompleteFunctionName { get; set; }
         public bool Filtering { get; set; }

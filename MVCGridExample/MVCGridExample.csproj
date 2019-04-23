@@ -254,6 +254,7 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\script-debug.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -313,6 +314,7 @@
     <Content Include="Views\Demo\CustomExport.cshtml" />
     <Content Include="Views\Demo\AdditionalQueryOptions.cshtml" />
     <Content Include="Views\Demo\CustomRazorView2.cshtml" />
+    <Content Include="Views\Demo\Localization.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Item\" />

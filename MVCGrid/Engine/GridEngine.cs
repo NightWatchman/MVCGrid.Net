@@ -107,6 +107,11 @@ namespace MVCGrid.Engine
                 model.NoResultsMessage = gridContext.GridDefinition.NoResultsMessage;
             }
 
+            model.NextButtonCaption = gridContext.GridDefinition.NextButtonCaption;
+            model.PreviousButtonCaption = gridContext.GridDefinition.PreviousButtonCaption;
+            model.SummaryMessage = gridContext.GridDefinition.SummaryMessage;
+            model.ProcessingMessage = gridContext.GridDefinition.ProcessingMessage;
+
             model.PagingModel = null;
             if (gridContext.QueryOptions.ItemsPerPage.HasValue)
             {
@@ -117,6 +122,10 @@ namespace MVCGrid.Engine
                 model.PagingModel.TotalRecords = totalRecords.Value;
 
                 model.PagingModel.FirstRecord = (currentPageIndex * gridContext.QueryOptions.ItemsPerPage.Value) + 1;
+                if(model.PagingModel.FirstRecord > model.PagingModel.TotalRecords) 
+                {
+                    model.PagingModel.FirstRecord = model.PagingModel.TotalRecords;
+                }
                 model.PagingModel.LastRecord = (model.PagingModel.FirstRecord + gridContext.QueryOptions.ItemsPerPage.Value) - 1;
                 if (model.PagingModel.LastRecord > model.PagingModel.TotalRecords)
                 {
@@ -165,7 +174,7 @@ namespace MVCGrid.Engine
                     else
                     {
                         iconDirection = SortDirection.Unspecified;
-                        linkDirection = SortDirection.Dsc;
+                        linkDirection = SortDirection.Asc;
                     }
 
                     renderingColumn.Onclick = HtmlUtility.MakeSortLink(gridContext.GridName, col.ColumnName, linkDirection);
